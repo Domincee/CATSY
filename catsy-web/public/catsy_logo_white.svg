@@ -1,0 +1,24 @@
+<svg width="180" height="130" viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 7">
+<g id="top-head">
+<path id="ear-right" d="M126.977 35.2572L120.755 21.345C120.735 21.3009 120.718 21.2554 120.705 21.2089L115.693 3.49288C115.458 2.66149 114.35 2.4996 113.886 3.2289L103.596 19.4276L94.9303 30.7633" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path id="head" d="M63.2939 28.0434L71.811 26.8154L80.0471 26.6338C82.9303 26.5702 85.7866 27.2003 88.3754 28.471L94.5751 31.5141" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path id="ear-left" d="M25.2889 39.7289L38.1536 18.7122C38.1826 18.6649 38.2076 18.6152 38.2283 18.5637L43.8471 4.61136C44.1437 3.87472 45.1393 3.76112 45.5943 4.412L53.7428 16.0693L62.8833 26.2693" stroke="white" stroke-width="4" stroke-linecap="round"/>
+</g>
+<path id="chin" d="M34.2051 107.142L35.7067 108.579C40.2452 112.921 45.4164 116.55 51.0437 119.342C55.8798 121.74 61.008 123.498 66.2988 124.571L71.3512 125.595C78.058 126.955 84.9262 127.338 91.7426 126.732L93.303 126.594C100.204 125.981 106.977 124.361 113.409 121.786L127.276 116.234" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<g id="whiskers">
+<path id="whisker-left-bottom" d="M38.1211 82.5377L12.2282 87.5666" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path id="whisker-left-top" d="M37.793 67.6857L2.00049 61.7884" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path id="whisker-right-bottom" d="M140.649 82.5057L169.725 87.0652" stroke="white" stroke-width="4" stroke-linecap="round"/>
+<path id="whisker-right-top" d="M140.371 69.8811L177.37 63.1214" stroke="white" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g id="eyes">
+<circle id="eye-right" cx="106.79" cy="63.1922" r="6.18508" transform="rotate(-1.26349 106.79 63.1922)" fill="white" stroke="white"/>
+<circle id="eye-left" cx="66.6238" cy="61.1065" r="6.18508" transform="rotate(-1.26349 66.6238 61.1065)" fill="white" stroke="white"/>
+</g>
+<g id="nose-mouth">
+<path id="nose" d="M82.5548 82.7468L81.9607 82.7598" stroke="white" stroke-width="9" stroke-linecap="round"/>
+<path id="mouth" d="M72.6409 98.122C72.6409 98.122 77.214 99.6696 80.0834 98.7008C84.1691 97.3213 82.8081 87.4962 82.8081 87.4962C82.8081 87.4962 83.6817 93.4206 84.4899 96.3747C85.298 99.3287 87.1097 99.9214 88.3012 100.748C90.6842 102.402 95.7108 99.842 95.7108 99.842" stroke="white" stroke-width="4" stroke-linecap="round"/>
+</g>
+</g>
+</svg>
