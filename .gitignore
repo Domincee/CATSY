@@ -31,3 +31,18 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# --- Flutter Specific Ignore Rules ---
+# Desktop Platforms (Not targeted)
+**/linux/
+**/macos/
+**/windows/
+
+# Framework Data & Build Outputs
+**/.dart_tool/
+**/.packages
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/pubspec.lock
+

@@ -28,7 +28,7 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
-
+#This is the url
 @app.get("/api/db-check")
 def check_db():
     try:
