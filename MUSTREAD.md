@@ -65,7 +65,7 @@ Once your Pull Request is approved and merged into `main` on GitHub, you are off
 
 1. Switch back to main: `git checkout main`
 2. Download the newly merged code: `git pull`
-3. Delete your old branch: `git branch -d <your-branch-name>`
-![Clean Up](image.png)
+3. Delete your old branch: `git branch -D <your-branch-name>`
+![Clean Up](steps-imgs/image-last.png)
 
 **🎉 You are now ready to grab a new issue and start again from Step 1!**
