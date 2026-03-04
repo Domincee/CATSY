@@ -1,0 +1,12 @@
+{
+    "title": "Coffee, Friends, vibes",
+    "description": "Curating moments, one cup at a time.",
+    "primaryButton": "Get My Stamps",
+    "secondaryText": "New here?",
+    "secondaryActionText": "Create Account",
+    "scrollText": "Scroll for Menu",
+    "assets": {
+        "leftCup": "/products/cookies-frappe.png",
+        "rightCup": "/products/seasalt-frappe.png"
+    }
+}

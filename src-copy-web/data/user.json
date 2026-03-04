@@ -1,0 +1,49 @@
+[
+    {
+        "id": "882910442910",
+        "username": "Domss",
+        "firstName": "Domince",
+        "lastName": "Aseberos",
+        "email": "daseberos@gmail.com",
+        "phone": "+63 9926796729",
+        "stamps": 8,
+        "joinedDate": "2025-11-15T08:30:00Z",
+        "favoriteItem": "Matcha Latte",
+        "history": [
+            {
+                "id": "TXN-1001",
+                "date": "Oct 24",
+                "items": [
+                    "2x Dark Choco Frappe"
+                ],
+                "totalPrice": "$13.00",
+                "isRated": false,
+                "ratings": null
+            },
+            {
+                "id": "TXN-1002",
+                "date": "Oct 22",
+                "items": [
+                    "1x Butter Croissant"
+                ],
+                "totalPrice": "$3.50",
+                "isRated": true,
+                "ratings": {
+                    "drinks": 5,
+                    "service": 5,
+                    "place": 5
+                }
+            },
+            {
+                "id": "TXN-1003",
+                "date": "Oct 15",
+                "items": [
+                    "1x Sea Salt Brew"
+                ],
+                "totalPrice": "$6.00",
+                "isRated": false,
+                "ratings": null
+            }
+        ]
+    }
+]

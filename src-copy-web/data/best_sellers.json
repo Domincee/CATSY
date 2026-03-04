@@ -1,0 +1,26 @@
+[
+    {
+        "id": "latte",
+        "name": "Spanish Latte",
+        "img": "/products/latte.png",
+        "badge": "Best Seller"
+    },
+    {
+        "id": "croissant",
+        "name": "Truffle Croissant",
+        "img": "/products/croissant.png",
+        "badge": "Staff Pick"
+    },
+    {
+        "id": "gold-brew",
+        "name": "Gold Brew",
+        "img": "/products/coldbrew.png",
+        "badge": "Trending"
+    },
+    {
+        "id": "sea-salt",
+        "name": "Sea Salt Frappe",
+        "img": "/products/seasalt-frappe.png",
+        "badge": "New Arrival"
+    }
+]
