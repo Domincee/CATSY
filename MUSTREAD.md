@@ -23,6 +23,8 @@ FOLLOW THIS STEPS:
 ex.
 ![alt text](steps-imgs/image-10.png)
 ![alt text](steps-imgs/image-11.png)
+--Button Compare and Pull request will not show 
+
 
 5. Go to Issue & Add Comment proving the task is done (image or description):
 ![alt text](steps-imgs/image-2.png)
@@ -42,6 +44,8 @@ ex.
 8. Once u see the changes is now pull on main ,delete branch or manualy dete from terminal
 Follow this steps:
 Ensure u are on the main 
-
+![alt text](image.png)
 9. Once on main , pull the changes
 
+
+--ensure all changes are pull before doing any work
