@@ -1,0 +1,112 @@
+[
+    {
+        "category": "Iced Coffee ☕",
+        "iconName": "Coffee",
+        "items": [
+            {
+                "id": 1,
+                "name": "Spanish Latte",
+                "price": "$6.50"
+            },
+            {
+                "id": 2,
+                "name": "Sea Salt Cold Brew",
+                "price": "$6.00"
+            },
+            {
+                "id": 3,
+                "name": "Caramel Macchiato",
+                "price": "$6.00"
+            },
+            {
+                "id": 4,
+                "name": "Iced Americano",
+                "price": "$4.50"
+            }
+        ]
+    },
+    {
+        "category": "Non-Coffee 🍵",
+        "iconName": "IceCream",
+        "items": [
+            {
+                "id": 5,
+                "name": "Matcha Cloud",
+                "price": "$6.50"
+            },
+            {
+                "id": 6,
+                "name": "Chocolate Lava",
+                "price": "$6.00"
+            },
+            {
+                "id": 7,
+                "name": "Strawberry Milk",
+                "price": "$5.50"
+            }
+        ]
+    },
+    {
+        "category": "Frappe 🍧",
+        "iconName": "IceCream",
+        "items": [
+            {
+                "id": 8,
+                "name": "Mocha Frappe",
+                "price": "$7.00"
+            },
+            {
+                "id": 9,
+                "name": "White Chocolate Berry",
+                "price": "$7.50"
+            },
+            {
+                "id": 10,
+                "name": "Coffee Jelly Frappe",
+                "price": "$7.00"
+            }
+        ]
+    },
+    {
+        "category": "Fruit Soda 🥤",
+        "iconName": "Droplets",
+        "items": [
+            {
+                "id": 11,
+                "name": "Mango Bliss Soda",
+                "price": "$6.00"
+            },
+            {
+                "id": 12,
+                "name": "Blueberry Sparking",
+                "price": "$6.00"
+            },
+            {
+                "id": 13,
+                "name": "Lychee Fizz",
+                "price": "$6.00"
+            }
+        ]
+    },
+    {
+        "category": "Tea 🍃",
+        "iconName": "Leaf",
+        "items": [
+            {
+                "id": 14,
+                "name": "Classic Hibiscus Tea",
+                "price": "$5.00"
+            },
+            {
+                "id": 15,
+                "name": "Peach Oolong",
+                "price": "$5.50"
+            },
+            {
+                "id": 16,
+                "name": "Green Tea Matcha",
+                "price": "$5.00"
+            }
+        ]
+    }
+]

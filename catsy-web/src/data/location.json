@@ -1,0 +1,17 @@
+{
+    "title": "Find Your Spot",
+    "status": "Open Now until 10 PM",
+    "address": "1495 Manuel B. Suaybaguio Sr. St,\nTagum City",
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.0626495025886!2d125.81173909999998!3d7.4583217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f953422a472eef%3A0xd41eebfc30d6bf3c!2s1495%20Manuel%20B.%20Suaybaguio%20Sr.%20St%2C%20Tagum%2C%20Davao+del+Norte!5e0!3m2!1sen!2sph!4v1770992453948!5m2!1sen!2sph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=1495+Manuel+B.+Suaybaguio+Sr.+St,+Tagum+City",
+    "images": [
+        {
+            "src": "/images/location/location_img.jpg",
+            "alt": "Cutsy Coffee Exterior"
+        },
+        {
+            "src": "/images/location/location_img_2.jpg",
+            "alt": "Cutsy Coffee Interior"
+        }
+    ]
+}
