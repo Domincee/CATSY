@@ -2,6 +2,15 @@
 
 Welcome! Please read this carefully to ensure we all work together smoothly without losing any code.
 
+---
+
+## 🌳 BRANCH STRATEGY
+Our team uses two main branches. Please understand the difference:
+- **`main` (Development):** This is where all active team development happens. When you finish a feature, you will **always** create a Pull Request to merge your code here.
+- **`production` (Stable/Deployed):** This is the live, working project. 🛑 **Never branch off of or merge directly into `production`.** We only update `production` when `main` is perfectly stable and ready to release.
+
+---
+
 ### 🛑 VERY IMPORTANT: ALWAYS UPDATE FIRST!
 Before you start any work, **always** make sure your code is up-to-date with the rest of the team:
 1. Open your terminal and type: `git checkout main`
