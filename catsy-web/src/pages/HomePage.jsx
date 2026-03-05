@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import SignatureThree from '../components/SignatureThree';
 import UnifiedMenu from '../components/Menu/UnifiedMenu';
 import LiveFloorMap from '../components/Map/LiveFloorMap';
+import StoreInfoSection from '../components/StoreInfoSection';
 import { useUser } from '../context/UserContext';
 
 export default function HomePage({ onNavigate, tablesData }) {
@@ -22,6 +23,9 @@ export default function HomePage({ onNavigate, tablesData }) {
 
             {/* 4. Find Your Spot - Grand Finale Map */}
             <LiveFloorMap tablesData={tablesData} onNavigate={onNavigate} />
+
+            {/* 5. Store Info & Location Section */}
+            <StoreInfoSection />
 
             {/* Simplified Footer / Bottom Space */}
             <div className="py-20 bg-neutral-900 border-t border-white/5 text-center">
