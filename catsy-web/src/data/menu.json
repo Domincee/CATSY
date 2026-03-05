@@ -1,111 +1,332 @@
 [
     {
-        "category": "Iced Coffee ☕",
-        "iconName": "Coffee",
+        "id": "cat-1",
+        "name": "Iced Coffee",
         "items": [
             {
                 "id": 1,
                 "name": "Spanish Latte",
-                "price": "$6.50"
+                "price": "₱185"
             },
             {
                 "id": 2,
                 "name": "Sea Salt Cold Brew",
-                "price": "$6.00"
+                "price": "₱170"
             },
             {
                 "id": 3,
                 "name": "Caramel Macchiato",
-                "price": "$6.00"
+                "price": "₱175"
             },
             {
                 "id": 4,
                 "name": "Iced Americano",
-                "price": "$4.50"
-            }
-        ]
-    },
-    {
-        "category": "Non-Coffee 🍵",
-        "iconName": "IceCream",
-        "items": [
+                "price": "₱130"
+            },
             {
                 "id": 5,
-                "name": "Matcha Cloud",
-                "price": "$6.50"
+                "name": "Vanilla Cold Brew",
+                "price": "₱165"
             },
             {
                 "id": 6,
-                "name": "Chocolate Lava",
-                "price": "$6.00"
+                "name": "Dark Mocha Latte",
+                "price": "₱180"
             },
             {
                 "id": 7,
-                "name": "Strawberry Milk",
-                "price": "$5.50"
-            }
-        ]
-    },
-    {
-        "category": "Frappe 🍧",
-        "iconName": "IceCream",
-        "items": [
+                "name": "Brown Sugar Oat Latte",
+                "price": "₱195"
+            },
             {
                 "id": 8,
-                "name": "Mocha Frappe",
-                "price": "$7.00"
+                "name": "Coconut Cold Brew",
+                "price": "₱175"
             },
             {
                 "id": 9,
-                "name": "White Chocolate Berry",
-                "price": "$7.50"
+                "name": "Hazelnut Latte",
+                "price": "₱185"
             },
             {
                 "id": 10,
-                "name": "Coffee Jelly Frappe",
-                "price": "$7.00"
-            }
-        ]
-    },
-    {
-        "category": "Fruit Soda 🥤",
-        "iconName": "Droplets",
-        "items": [
+                "name": "Salted Caramel Cold Brew",
+                "price": "₱180"
+            },
             {
                 "id": 11,
-                "name": "Mango Bliss Soda",
-                "price": "$6.00"
+                "name": "Iced Flat White",
+                "price": "₱160"
             },
             {
                 "id": 12,
-                "name": "Blueberry Sparking",
-                "price": "$6.00"
+                "name": "Espresso Tonic",
+                "price": "₱155"
             },
             {
                 "id": 13,
-                "name": "Lychee Fizz",
-                "price": "$6.00"
+                "name": "Cascara Cold Brew",
+                "price": "₱190"
+            },
+            {
+                "id": 14,
+                "name": "Dirty Matcha Latte",
+                "price": "₱200"
+            },
+            {
+                "id": 15,
+                "name": "Black Sesame Latte",
+                "price": "₱195"
+            },
+            {
+                "id": 16,
+                "name": "Tiger Oat Latte",
+                "price": "₱185"
+            },
+            {
+                "id": 17,
+                "name": "Affogato Float",
+                "price": "₱175"
+            },
+            {
+                "id": 18,
+                "name": "Double Espresso Shot",
+                "price": "₱120"
+            },
+            {
+                "id": 19,
+                "name": "Creamy Dalgona Coffee",
+                "price": "₱170"
+            },
+            {
+                "id": 20,
+                "name": "Blonde Roast Latte",
+                "price": "₱165"
             }
         ]
     },
     {
-        "category": "Tea 🍃",
-        "iconName": "Leaf",
+        "id": "cat-2",
+        "name": "Non-Coffee",
         "items": [
             {
-                "id": 14,
+                "id": 21,
+                "name": "Matcha Cloud",
+                "price": "₱185"
+            },
+            {
+                "id": 22,
+                "name": "Chocolate Lava",
+                "price": "₱170"
+            },
+            {
+                "id": 23,
+                "name": "Strawberry Milk",
+                "price": "₱155"
+            },
+            {
+                "id": 24,
+                "name": "Taro Delight",
+                "price": "₱175"
+            },
+            {
+                "id": 25,
+                "name": "Ube Latte",
+                "price": "₱185"
+            },
+            {
+                "id": 26,
+                "name": "Rose Gold Milk",
+                "price": "₱180"
+            },
+            {
+                "id": 27,
+                "name": "Hojicha Latte",
+                "price": "₱175"
+            },
+            {
+                "id": 28,
+                "name": "Lavender Milk",
+                "price": "₱185"
+            },
+            {
+                "id": 29,
+                "name": "Cookies and Cream Milk",
+                "price": "₱170"
+            },
+            {
+                "id": 30,
+                "name": "Brown Sugar Milk Tea",
+                "price": "₱160"
+            },
+            {
+                "id": 31,
+                "name": "Barley Milk",
+                "price": "₱150"
+            },
+            {
+                "id": 32,
+                "name": "Pandan Latte",
+                "price": "₱175"
+            }
+        ]
+    },
+    {
+        "id": "cat-3",
+        "name": "Frappe",
+        "items": [
+            {
+                "id": 33,
+                "name": "Mocha Frappe",
+                "price": "₱195"
+            },
+            {
+                "id": 34,
+                "name": "White Chocolate Berry",
+                "price": "₱205"
+            },
+            {
+                "id": 35,
+                "name": "Coffee Jelly Frappe",
+                "price": "₱195"
+            },
+            {
+                "id": 36,
+                "name": "Oreo Frappe",
+                "price": "₱185"
+            },
+            {
+                "id": 37,
+                "name": "Strawberry Cheesecake",
+                "price": "₱205"
+            },
+            {
+                "id": 38,
+                "name": "Salted Caramel Frappe",
+                "price": "₱195"
+            },
+            {
+                "id": 39,
+                "name": "Taro Blizzard",
+                "price": "₱200"
+            },
+            {
+                "id": 40,
+                "name": "Avocado Cream Frappe",
+                "price": "₱210"
+            },
+            {
+                "id": 41,
+                "name": "Matcha Bliss Frappe",
+                "price": "₱200"
+            }
+        ]
+    },
+    {
+        "id": "cat-4",
+        "name": "Fruit Soda",
+        "items": [
+            {
+                "id": 42,
+                "name": "Mango Bliss Soda",
+                "price": "₱165"
+            },
+            {
+                "id": 43,
+                "name": "Blueberry Sparkling",
+                "price": "₱165"
+            },
+            {
+                "id": 44,
+                "name": "Lychee Fizz",
+                "price": "₱165"
+            },
+            {
+                "id": 45,
+                "name": "Calamansi Soda",
+                "price": "₱155"
+            },
+            {
+                "id": 46,
+                "name": "Passionfruit Pop",
+                "price": "₱175"
+            },
+            {
+                "id": 47,
+                "name": "Watermelon Mint Soda",
+                "price": "₱170"
+            }
+        ]
+    },
+    {
+        "id": "cat-5",
+        "name": "Tea",
+        "items": [
+            {
+                "id": 48,
                 "name": "Classic Hibiscus Tea",
-                "price": "$5.00"
+                "price": "₱140"
             },
             {
-                "id": 15,
+                "id": 49,
                 "name": "Peach Oolong",
-                "price": "$5.50"
+                "price": "₱155"
             },
             {
-                "id": 16,
+                "id": 50,
                 "name": "Green Tea Matcha",
-                "price": "$5.00"
+                "price": "₱140"
+            },
+            {
+                "id": 51,
+                "name": "Jasmine Milk Tea",
+                "price": "₱150"
+            },
+            {
+                "id": 52,
+                "name": "Thai Milk Tea",
+                "price": "₱155"
+            },
+            {
+                "id": 53,
+                "name": "Chamomile Honey Tea",
+                "price": "₱145"
+            }
+        ]
+    },
+    {
+        "id": "cat-6",
+        "name": "Pastries",
+        "items": [
+            {
+                "id": 54,
+                "name": "Croissant",
+                "price": "₱120"
+            },
+            {
+                "id": 55,
+                "name": "Chocolate Croissant",
+                "price": "₱130"
+            },
+            {
+                "id": 56,
+                "name": "Blueberry Muffin",
+                "price": "₱110"
+            },
+            {
+                "id": 57,
+                "name": "Banana Bread",
+                "price": "₱100"
+            },
+            {
+                "id": 58,
+                "name": "Cinnamon Roll",
+                "price": "₱130"
+            },
+            {
+                "id": 59,
+                "name": "Almond Croissant",
+                "price": "₱140"
             }
         ]
     }
