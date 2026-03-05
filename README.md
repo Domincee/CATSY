@@ -36,6 +36,8 @@ cd CATSY
 
 ### Step 2: Backend Setup (FastAPI)
 
+##### 2a: Create your `.env` file 
+Copy from the document given
 ```bash
 cd catsy-backend
 
