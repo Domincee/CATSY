@@ -1,46 +1,21 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { settingsService } from '../services/settingsService';
-import { useSSE } from '../hooks/useSSE';
-import { logger } from '../utils/logger';
+import React, { createContext, useContext, useState } from 'react';
+import { mockSettings } from '../data/mockSettings';
 
 const SettingsContext = createContext();
 
 export function SettingsProvider({ children }) {
-    const [settings, setSettings] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-
-    const fetchSettings = useCallback(async () => {
-        try {
-            const data = await settingsService.getSettings();
-            setSettings(data);
-        } catch (e) {
-            logger.error('Failed to fetch settings', e);
-        } finally {
-            setIsLoading(false);
-        }
-    }, []);
-
-    useEffect(() => {
-        fetchSettings();
-    }, [fetchSettings]);
-
-    useSSE({
-        'settings.updated': (event) => {
-            logger.log('SSE: Settings updated received', event.payload);
-            fetchSettings();
-        }
-    });
+    const [settings] = useState(mockSettings);
 
     const updateSettings = async (data) => {
-        const updated = await settingsService.updateSettings(data);
-        setSettings(updated);
-        return updated;
+        // No-op for static mode or just log it
+        console.log('Update settings (Static Mode):', data);
+        return { ...settings, ...data };
     };
 
-    const refreshSettings = () => fetchSettings();
+    const refreshSettings = () => { };
 
     return (
-        <SettingsContext.Provider value={{ settings, isLoading, updateSettings, refreshSettings }}>
+        <SettingsContext.Provider value={{ settings, isLoading: false, updateSettings, refreshSettings }}>
             {children}
         </SettingsContext.Provider>
     );

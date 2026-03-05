@@ -4,10 +4,8 @@ import gsap from 'gsap';
 import { Flip } from 'gsap/Flip';
 import CatsyLogo from './UI/CatsyLogo/CatsyLogo';
 import heroData from '../data/hero.json';
-import { useSettings } from '../context/SettingsContext';
-import { useSSE } from '../hooks/useSSE';
-import { logger } from '../utils/logger';
 import { useCallback } from 'react';
+import { mockSettings } from '../data/mockSettings';
 
 
 gsap.registerPlugin(Flip);
@@ -17,7 +15,6 @@ export default function HeroSection({ onLogin, onSignup, onNavigate, isLoggedIn 
     const logoRef = useRef(null);
     const textContainerRef = useRef(null);
     const btnRef = useRef(null);
-    const accountRef = useRef(null);
     const scrollRef = useRef(null);
 
     // New Refs for Cups
@@ -30,52 +27,24 @@ export default function HeroSection({ onLogin, onSignup, onNavigate, isLoggedIn 
         rightCup: heroData.assets.rightCup
     };
 
-    const { settings: restaurantSettings } = useSettings();
-
     // Splash State: true = show splash, false = show hero
     const hasSeenSplash = typeof window !== 'undefined' && sessionStorage.getItem('hasSeenSplash') === 'true';
 
-    const [isGlobalLoading, setIsGlobalLoading] = useState(false);
-    const loadingRef = useRef(false);
-    const [shouldStartLogoAnim, setShouldStartLogoAnim] = useState(hasSeenSplash);
-    const logoTriggerId = useRef(null);
+    const [shouldStartLogoAnim, setShouldStartLogoAnim] = useState(false);
 
     useEffect(() => {
-        if (hasSeenSplash) return;
+        if (hasSeenSplash) {
+            setShouldStartLogoAnim(true);
+            return;
+        }
 
-        const handleStart = () => {
-            loadingRef.current = true;
-            setIsGlobalLoading(true);
-            if (logoTriggerId.current) clearTimeout(logoTriggerId.current);
-        };
+        // Static mode: just start after a tiny delay
+        const timer = setTimeout(() => {
+            setShouldStartLogoAnim(true);
+        }, 300);
 
-        const handleEnd = () => {
-            loadingRef.current = false;
-            setIsGlobalLoading(false);
-            // Wait 0.3s after loading finished before starting logo animation
-            logoTriggerId.current = setTimeout(() => {
-                setShouldStartLogoAnim(true);
-            }, 300);
-        };
-
-        window.addEventListener('global-loading-start', handleStart);
-        window.addEventListener('global-loading-end', handleEnd);
-
-        // Fallback: If no network request happens within 1s, start anyway
-        const fallbackId = setTimeout(() => {
-            setShouldStartLogoAnim(old => {
-                if (!old && !loadingRef.current) return true;
-                return old;
-            });
-        }, 1000);
-
-        return () => {
-            window.removeEventListener('global-loading-start', handleStart);
-            window.removeEventListener('global-loading-end', handleEnd);
-            // We intentionally DO NOT clear logoTriggerId here to let the 300ms timer survive state transitions
-            clearTimeout(fallbackId);
-        };
-    }, [hasSeenSplash]); // isGlobalLoading removed from dependencies to stabilize timers
+        return () => clearTimeout(timer);
+    }, [hasSeenSplash]);
 
     // We start with isSplashComplete = true if seen, else false
     const [isSplashComplete, setIsSplashComplete] = useState(hasSeenSplash);
@@ -85,7 +54,6 @@ export default function HeroSection({ onLogin, onSignup, onNavigate, isLoggedIn 
 
     // Conditional Animation Classes
     const animClass = isHeroAnimationComplete ? '' : 'opacity-0 translate-y-8';
-    const cupAnimClass = isHeroAnimationComplete ? '' : 'opacity-0';
 
     useEffect(() => {
         if (isHeroAnimationComplete) {
@@ -264,27 +232,28 @@ export default function HeroSection({ onLogin, onSignup, onNavigate, isLoggedIn 
                         ${!isSplashComplete ? 'hidden' : 'flex'}
                     `}
                 >
+                    {/* Primary Button: Reserve a Table */}
                     <button
                         ref={btnRef}
-                        onClick={isLoggedIn ? () => onNavigate('profile') : onLogin}
-                        className={`compact-btn w-full bg-neutral-900 text-white py-4 rounded-full font-bold text-lg shadow-xl hover:scale-105 duration-500 active:scale-95 transition-all ${animClass}`}
-                    >
-                        {isLoggedIn ? "Profile" : heroData.primaryButton}
-                    </button>
-
-                    {/* Secondary: Reserve a Table */}
-                    <button
                         onClick={() => onNavigate('reservation')}
-                        className={`compact-btn w-full bg-transparent border-2 border-neutral-900 text-neutral-900 py-4 rounded-full font-bold text-lg hover:bg-neutral-50 transition-colors duration-300 ${animClass}`}
+                        className={`compact-btn w-full bg-neutral-900 text-white py-4 rounded-full font-bold text-lg shadow-xl hover:scale-105 duration-500 active:scale-95 transition-all ${animClass}`}
                     >
                         Reserve a Table
                     </button>
 
+                    {/* Secondary Button: Login / Profile */}
+                    <button
+                        onClick={isLoggedIn ? () => onNavigate('profile') : onLogin}
+                        className={`compact-btn w-full bg-transparent border-2 border-neutral-900 text-neutral-900 py-4 rounded-full font-bold text-lg hover:bg-neutral-50 transition-colors duration-300 ${animClass}`}
+                    >
+                        {isLoggedIn ? "Profile" : heroData.primaryButton}
+                    </button>
+
                     {/* Status Badge */}
                     <div className={`mt-2 flex items-center justify-center gap-2 ${animClass} transition-all duration-700`}>
-                        <div className={`w-2 h-2 rounded-full animate-pulse ${restaurantSettings?.is_open ? 'bg-green-500 shadow-[0_0_12px_rgba(34,197,94,0.8)]' : 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]'}`}></div>
-                        <span className={`text-sm font-bold tracking-widest uppercase ${restaurantSettings?.is_open ? 'text-green-600' : 'text-red-600'}`}>
-                            {restaurantSettings ? (restaurantSettings.is_open ? 'Open Now' : 'Closed for now') : 'Checking...'}
+                        <div className={`w-2 h-2 rounded-full animate-pulse ${mockSettings.is_open ? 'bg-green-500 shadow-[0_0_12px_rgba(34,197,94,0.8)]' : 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]'}`}></div>
+                        <span className={`text-sm font-bold tracking-widest uppercase ${mockSettings.is_open ? 'text-green-600' : 'text-red-600'}`}>
+                            {mockSettings.is_open ? 'Open Now' : 'Closed for now'}
                         </span>
                     </div>
 
