@@ -6,12 +6,11 @@ import STATIC_MENU from '../../data/menu.json';
 
 // ─── Grid limits ─────────────────────────────────────────────────────────────
 // Wide  (≥ 1024px): 3 cols × 6 rows = 18 items max
-// Mobile (< 1024px): 2 cols × 6 rows = 12 items maxx
-const MAX_ROWS = 6;
+// Mobile (< 1024px): 1–2 cols (dynamic) × 5 rows max
+const MAX_ROWS_WIDE = 6;
+const MAX_ROWS_MOBILE = 5;
 const COLS_WIDE = 3;
-const COLS_MOBILE = 2;
-const LIMIT_WIDE = COLS_WIDE * MAX_ROWS; // 18
-const LIMIT_MOBILE = COLS_MOBILE * MAX_ROWS; // 12
+const LIMIT_WIDE = COLS_WIDE * MAX_ROWS_WIDE; // 18
 
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function UnifiedMenu() {
@@ -29,8 +28,13 @@ export default function UnifiedMenu() {
 
     // ── Derived ──────────────────────────────────────────────────────────────
     const allItems = selectedCategory.items;
+
+    // Dynamic mobile columns: 1 col if only 1 item, otherwise 2 (max 2)
+    const colsMobile = Math.min(allItems.length, 2);
+    const limitMobile = colsMobile * MAX_ROWS_MOBILE; // 5 or 10
+
     const visibleItems = isExpanded ? allItems : allItems.slice(0, LIMIT_WIDE);
-    const showSeeAll = allItems.length > LIMIT_MOBILE;
+    const showSeeAll = allItems.length > limitMobile;
 
     // ── Animations ───────────────────────────────────────────────────────────
     useGSAP(() => {
@@ -131,20 +135,23 @@ export default function UnifiedMenu() {
                 */}
                 <div
                     ref={gridRef}
-                    className="grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0"
+                    className={`grid gap-x-8 gap-y-0 lg:grid-cols-3 ${colsMobile === 1 ? 'grid-cols-1' : 'grid-cols-2'
+                        }`}
                 >
                     {visibleItems.map((item, idx) => {
-                        const hiddenOnMobile = !isExpanded && idx >= LIMIT_MOBILE;
+                        const hiddenOnMobile = !isExpanded && idx >= limitMobile;
                         return (
                             <div
                                 key={item.id}
                                 className={`bev-cell group border-b border-neutral-100 py-3 px-1 transition-colors duration-200 hover:bg-neutral-50/60 ${hiddenOnMobile ? 'hidden lg:flex' : 'flex'
-                                    } items-center justify-between gap-3`}
+                                    } flex-col lg:flex-row lg:items-center lg:justify-between gap-0.5 lg:gap-3`}
                             >
-                                <span className="text-sm font-medium text-neutral-800 truncate flex-1 group-hover:text-amber-700 transition-colors duration-200">
+                                {/* Row 1 – Product name (always full, no truncation on mobile) */}
+                                <span className="text-sm font-medium text-neutral-800 leading-snug group-hover:text-amber-700 transition-colors duration-200 break-words lg:truncate lg:flex-1">
                                     {item.name}
                                 </span>
-                                <span className="text-sm font-bold text-neutral-400 font-mono shrink-0 tabular-nums">
+                                {/* Row 2 on mobile / inline on desktop – Price */}
+                                <span className="text-sm font-bold text-neutral-400 font-mono tabular-nums shrink-0">
                                     {item.price}
                                 </span>
                             </div>
