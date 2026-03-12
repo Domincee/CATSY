@@ -180,13 +180,12 @@ Full-page `neutral-900`, `text-white`, `p-10`.
 `"+ Add Product"` green button (`bg-green-600`, `rounded-2xl`, Plus icon). Category pill filter tabs. Sort buttons.
 Each product row: name + category badge + price + availability pill + Edit (pencil) + Delete (trash).
 Delete confirm: `"Confirm Delete"` / `"This action cannot be undone. Are you sure you want to delete this product?"` / label `"Delete"`.
-Save confirm: `"Confirm Save"` / `"Are you sure you want to save these changes to this product?"`
+Save confirm: `"Confirm Save"` / `"Are you sure you want to save these chasdnges to this product?"`
 Save success: `"Success!"` / `"Product has been saved successfully."`
 Delete success: `"Deleted"` / `"Product has been removed."`
 
-# A-03 Accounts Tab
-User list: name, email, role badge (admin=red / staff=blue / customer=neutral). Clicking a row expands to detail panel (AccountDetail): avatar, full info, deactivate/reactivate toggle, stamp count, timestamps.
-`"+ Add Account"` green button. New account fields: first name, last name, email, contact, role dropdown, password.
+
+a
 
 # A-04 Reservations Tab
 Title: `"Reservation Dashboard"` (BookOpen icon) — sub: `"Real-time floor management"` (uppercase tracked).
