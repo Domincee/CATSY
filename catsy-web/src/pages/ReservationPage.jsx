@@ -172,9 +172,9 @@ export default function ReservationPage({ onLoginReq, tablesData }) {
 
                 {/* Availability Badge */}
                 <div className="inline-flex items-center gap-3 bg-neutral-800/50 border border-white/5 px-5 py-2 rounded-full backdrop-blur-md">
-                    <span className={`w-2.5 h-2.5 rounded-full ${tablesData.available > 0 ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]' : 'bg-red-500'}`} />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
                     <span className="text-sm font-bold text-white tracking-wide uppercase">
-                        {tablesData.available} Tables Currently Available
+                        5 Tables Currently Available
                     </span>
                 </div>
             </div>
