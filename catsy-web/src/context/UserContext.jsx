@@ -1,10 +1,17 @@
 import React, { createContext, useContext, useState } from 'react';
 import { mockAuth } from '../data/mockAuth';
 
+import { mockUser } from '../data/mockUser';
+
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-    const [userInfo, setUserInfo] = useState(mockAuth.user);
+    const [userInfo, setUserInfo] = useState({
+        id: "mock-123",
+        ...mockUser,
+        favoriteItem: "Caramel Macchiato",
+        history: []
+    });
     const [isLoggedIn, setIsLoggedIn] = useState(mockAuth.isLoggedIn);
     const [isInitialized, setIsInitialized] = useState(true);
 

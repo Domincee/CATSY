@@ -71,6 +71,7 @@ export default function ProfilePage() {
         const hasChanges =
             (editForm.firstName ?? '') !== (userInfo.firstName ?? '') ||
             (editForm.lastName ?? '') !== (userInfo.lastName ?? '') ||
+            (editForm.username ?? '') !== (userInfo.username ?? '') ||
             (editForm.email ?? '') !== (userInfo.email ?? '') ||
             (editForm.phone ?? '') !== (userInfo.phone ?? '') ||
             (editForm.password ?? '') !== '';
@@ -145,6 +146,22 @@ export default function ProfilePage() {
 
                 {/* Vertical Profile Details */}
                 <div className="flex flex-col gap-6">
+
+                    {/* Username */}
+                    <div>
+                        <label className="text-xs font-bold uppercase text-neutral-400 tracking-wider mb-1 block">Username</label>
+                        {isEditing ? (
+                            <input
+                                type="text"
+                                name="username"
+                                value={editForm.username}
+                                onChange={handleInputChange}
+                                className="w-full text-xl font-bold text-neutral-900 border-b-2 border-brand-accent pb-1 outline-none bg-transparent"
+                            />
+                        ) : (
+                            <div className="text-xl font-bold text-neutral-900 border-b border-neutral-200 pb-2">@{userInfo.username || 'n/a'}</div>
+                        )}
+                    </div>
 
                     {/* First Name */}
                     <div>

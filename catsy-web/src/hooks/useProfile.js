@@ -75,24 +75,18 @@ export function useProfile(userInfo, setUserInfo) {
                 delete updatePayload.password;
             }
 
-            const updated = await customerService.updateProfile(userInfo.id, updatePayload);
+            // Mock success logic instead of real API call
+            await new Promise(resolve => setTimeout(resolve, 800));
 
-            const mappedUser = {
+            const updated = {
                 ...userInfo,
-                ...updated,
-                // Preserve tokens if not provided in the update response (backend update usually doesn't return new tokens)
-                access_token: updated.access_token || userInfo.access_token,
-                refresh_token: updated.refresh_token || userInfo.refresh_token,
-                firstName: updated.first_name,
-                lastName: updated.last_name,
-                phone: updated.contact,
-                accountId: updated.account_id
+                ...updatePayload,
             };
 
-            if (mappedUser.password) delete mappedUser.password;
+            if (updated.password) delete updated.password;
 
-            setUserInfo(mappedUser);
-            saveSession(mappedUser);
+            setUserInfo(updated);
+            saveSession(updated);
             setIsEditing(false);
             return { success: true };
         } catch (error) {
@@ -122,6 +116,8 @@ export function useProfile(userInfo, setUserInfo) {
         // Input sanitization
         if (name === 'firstName' || name === 'lastName') {
             sanitizedValue = value.replace(/[^a-zA-Z\s]/g, '');
+        } else if (name === 'username') {
+            sanitizedValue = value.replace(/[^a-zA-Z0-9_]/g, '');
         } else if (name === 'phone') {
             sanitizedValue = value.replace(/[^0-9]/g, '');
         }
