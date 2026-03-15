@@ -33,7 +33,7 @@ export function useAuth(onLoginSuccess, initialIsLogin = true) {
             setPasswordStrength({ score: 0, label: 'Weak', color: 'bg-red-500', feedback: [] });
             return;
         }
-        
+
         const strength = validatePassword(formData.password);
         setPasswordStrength(strength);
     }, [formData.password, isLogin]);
@@ -52,17 +52,17 @@ export function useAuth(onLoginSuccess, initialIsLogin = true) {
 
         try {
             if (isLogin) {
-                if (formData.email === 'tester123' && formData.password === '123456') {
-                    onLoginSuccess({ id: 'mock-id', firstName: 'Tester', account_id: '12345678' });
+                // Add artificial delay purely to VISUALLY demonstrate the "loading" button state requirement
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Mock success: username `test` / password `test123`
+                if (formData.email === 'test' && formData.password === 'test123') {
+                    const mockUser = { id: 'mock-id', firstName: 'Tester', accountId: '12345678', role: 'customer' };
+                    saveSession(mockUser);
+                    onLoginSuccess(mockUser);
                 } else {
-                    const response = await customerService.login(formData.email, formData.password);
-                    if (response) {
-                        const userData = Array.isArray(response) ? response[0] : response;
-                        const mappedUser = mapUserData(userData);
-                        logger.log("Mapped User Data:", mappedUser);
-                        saveSession(mappedUser);
-                        onLoginSuccess(mappedUser);
-                    }
+                    // Mock error: any other input → show error message UI
+                    throw new Error('Invalid username or password');
                 }
             } else {
                 const newUser = await customerService.signup({

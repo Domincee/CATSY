@@ -41,7 +41,7 @@ export default function IdentityHub({ user }) {
 
     return (
         <section className="mb-10">
-            <h2 className="text-2xl font-sans font-bold mb-4 text-brand-secondary">My Identity</h2>
+            <h2 className="text-2xl font-sans font-bold mb-4 text-brand-secondary">My Profile</h2>
 
             {/* Digital QR ID Card */}
             <div ref={cardRef} className="bg-neutral-900 text-white p-6 rounded-3xl shadow-xl relative overflow-hidden border border-white/10" style={{ backfaceVisibility: 'hidden' }}>
@@ -91,7 +91,7 @@ export default function IdentityHub({ user }) {
                         </button>
                         <div className="text-center">
                             <h3 className="text-2xl font-bold text-neutral-900 mb-1">{user.firstName} {user.lastName}</h3>
-                            <p className="text-neutral-500 text-sm">Scan to verify identity</p>
+                            <p className="text-neutral-500 text-sm">Scan to verify profile</p>
                         </div>
 
                         <div className="p-4 border-2 border-neutral-100 rounded-2xl">
